@@ -6,6 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RGZ</title>
     <link rel="stylesheet" href="main.css">
+    <style>
+    .krugi1 {
+        display: inline-block;
+        border-radius: 50px;
+        background-color:#212121;
+        color: #ffd335;;
+        width: 200px;
+        height: 80px;
+        text-align: center;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        margin-left: 250px;
+        font-weight: bold;
+        padding-top: 15px;
+        font-size: 20px;
+    }
+    .krugi1 p{
+        margin-top: 5px;
+        font-weight: 300;
+        font-size: 15px;
+    }
+    #tab {
+        text-align: center;
+        margin: auto;
+    }
+    .knopka {
+        font-weight: bold;
+        border-color: black;
+        display: inline-block;
+        
+    }
+    </style>
+    <script>
+        
+        function znach() {
+            let data = ['3-04-2023', '4-04-2023', '5-04-2023', '6-04-2023', '7-04-2023', '10-04-2023', '11-04-2023', '12-04-2023', 
+            '13-04-2023', '14-04-2023', '17-04-2023', '18-04-2023', '19-04-2023', '20-04-2023', '21-04-2023', '24-04-2023', '25-04-2023', 
+            '26-04-2023', '27-04-2023', '28-04-2023']; 
+            let dan = [390.9, 390,389.7,389.8,391.7,393.5,388.35,390.9,390.1,392.4,395.85,397,396.1,396.5,398.75,400.4,396.45,395.75,
+            398.25,393.8];
+            let table = document.getElementById('tab');
+            
+            let min = Math.min(...dan);
+            document.getElementById('minimum').innerHTML = "Минимальное значение: " + min;
+            let max = Math.max(...dan);
+            document.getElementById('maximum').innerHTML = "Максимальное значение: " + max;
+            
+            let sum = 0;
+            for(let i = 0; i < dan.length; i++){
+                sum += dan[i];
+            }
+            let srznach = sum / dan.length; 
+            let k = 0;
+            for(let i = 0; i < dan.length; i++) {
+                k += Math.pow(dan[i] - srznach, 2);
+            }
+            let sr = Math.sqrt(k / dan.length);
+            document.getElementById('sr').innerHTML = "Среднеквадратичное отклонение: " + sr;
+
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -18,3 +79,101 @@
         </ul>
     </header>
     <main>
+        <h1 style="text-align: center;">Информация об акциях</h1>
+        <div class="krugi1" style="width: 300px;"> <p style="font-size: 18px;">Капитализация</p>4 502 105.94 млн RUB</div>
+        <div class="krugi1" style="width: 300px;"><p style="font-size: 18px;">Количество акций</p>10 598 177 817 шт.</div>
+        <h2 style="text-align: center;">Цены на момент закрытия торгов за апрель</h2>
+        <table border="1" style="background-color: #ffd335; text-align: center;" id="tab">
+            <tbody><tr>
+                <td><b>Дата</b></td>
+                <td><b>Данные</b></td>
+            </tr>
+            <tr>
+                <td>03-04-2023</td>
+                <td>390.9</td>
+            </tr>
+            <tr>
+                <td>04-04-2023</td>
+                <td>390.0</td>
+            </tr>
+            <tr>
+                <td>05-04-2023</td>
+                <td>389.7</td>
+            </tr>
+            <tr>
+                <td>06-04-2023</td>
+                <td>389.8</td>
+            </tr>
+            <tr>
+                <td>07-04-2023</td>
+                <td>391.7</td>
+            </tr>
+            <tr>
+                <td>10-04-2023</td>
+                <td>393.5</td>
+            </tr>
+            <tr>
+                <td>11-04-2023</td>
+                <td>388.35</td>
+            </tr>
+            <tr>
+                <td>12-04-2023</td>
+                <td>390.9</td>
+            </tr>
+            <tr>
+                <td>13-04-2023</td>
+                <td>390.1</td>
+            </tr>
+            <tr>
+                <td>14-04-2023</td>
+                <td>392.4</td>
+            </tr>
+            <tr>
+                <td>17-04-2023</td>
+                <td>395.85</td>
+            </tr>
+            <tr>
+                <td>18-04-2023</td>
+                <td>397.0</td>
+            </tr>
+            <tr>
+                <td>19-04-2023</td>
+                <td>396.1</td>
+            </tr>
+            <tr>
+                <td>20-04-2023</td>
+                <td>396.5</td>
+            </tr>
+            <tr>
+                <td>21-04-2023</td>
+                <td>398.75</td>
+            </tr>
+            <tr>
+                <td>24-04-2023</td>
+                <td>400.4</td>
+            </tr>
+            <tr>
+                <td>25-04-2023</td>
+                <td>396.45</td>
+            </tr>
+            <tr>
+                <td>26-04-2023</td>
+                <td>395.75</td>
+            </tr>
+            <tr>
+                <td>28-04-2023</td>
+                <td>398.25</td>
+            </tr>
+            <tr>
+                <td>28-04-2023</td>
+                <td>393.8</td>
+            </tr>
+
+        </tbody></table>
+        <button onclick="znach()" style="margin-left: 50px; margin-bottom: 20px; background-color: #ffd335; font-weight: bold;
+        ">Max/min значения и среднеквадратическое отклонение</button>
+        <div id="minimum" style="margin-top: 10px; margin-left: 10px;" class="knopka"></div>
+        <div id="maximum" style="margin-top: 10px; margin-left: 10px;" class="knopka"></div>
+        <div id="sr" style="margin-top: 10px; margin-left: 10px;" class="knopka"></div>
+    </main>
+</body>
