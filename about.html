@@ -11,7 +11,7 @@
           position: relative;
           width: 700px;
       }
-      /*creating line for timeline*/
+      /*создание линии для истории*/
       .main-container::after{
           content: '';
           position: absolute;
@@ -22,7 +22,7 @@
           left: 50%;
           margin-left: 350px;
       }
-      /*Adjusting box of all content*/
+      /*корректировка содержимого в блоке*/
       .text-wrapper{
           padding: 10px 412px;
           position: relative;
@@ -31,6 +31,7 @@
           margin: 50px 0;
 
       }
+      /*добавление псевдоэлемента для добавления дополнительного стилизованного блока*/
       .text-wrapper::after{
           content: '';
           position: absolute;
@@ -42,19 +43,18 @@
           border-radius: 50%;
           z-index: 1;
       }
-      /*for left events*/
+      /*для левой стороны*/
       .left{
           left: -200px;
       }
-      /*for right events*/
+      /*для правой стороныs*/
       .right{
           left:50%;
       }
       .right::after{
           left:342px;
       }
-      /*content box colour padding 
-      and radius for circular corner*/
+      
       .content{
           padding: 15px 15px 15px 17px;
           background-color: #ffd335;
@@ -65,14 +65,13 @@
       .content p:hover {
         font-size: 20px;
       }
-      /*setting text property of event heading*/
       .content h3{
           text-transform: uppercase;
           font-size: 20px;
           color: #212121;
           letter-spacing:1px;
       }
-      /*setting text property of event content*/
+      
       .content p{
           color: black;
           font-weight: 300;
@@ -129,7 +128,9 @@
                 В 1991 году на базе расформированного Министерства нефтяной и газовой промышленности СССР была создана 
                 государственная нефтяная компания «Роснефтегаз». В <u>1993 году она была преобразована в государственное предприятие «Роснефть»</u>.
             </div>
+            
             <h3 >Основные направления деятельности компании:</h3>
+            
             <div>
                 <ul >
                     <li>поиск и разведка месторождений углеводородов,</li>
@@ -138,7 +139,9 @@
                     <li>реализация нефти, газа и продуктов их переработки на территории России и за её пределами и др.</li>
                 </ul>
             </div>
+            
             <h2 style="text-align: center; ">ФАКТЫ</h2>
+            
             <div class="krugi">Крупнейший налогоплательщик</div>
             <div class="krugi">6% доля <p>в мировой добыче</p></div>
             <div class="krugi">8% доля  <p>в добыче газа в России </p></div>
@@ -146,10 +149,11 @@
             <div class="krugi">23% доля газа  <p>в добыче углеводородов Компании </p></div>
             <div class="krugi">около 3 тыс.   <p>АЗС в России </p></div>
             <h2 style="text-align: center; ">ИСТОРИЯ</h2>
+           
             <div class="main-container">
-                <!-- event 1st of timeline -->
+                
                 <div class="text-wrapper left">
-                    <!-- all text content of timeline -->
+                   
                     <div class="content">
                         <h3>1994 — 1998 гг.</h3>
                         <p>
@@ -158,9 +162,9 @@
                         </p>
                     </div>
                 </div>
-                <!-- event 1st of timeline -->
+                
                 <div class="text-wrapper right">
-                    <!-- all text content of timeline -->
+                    
                     <div class="content">
                         <h3>2001 — 2004 гг.</h3>
                         <p>
@@ -170,9 +174,9 @@
                         </p>
                     </div>
                 </div>
-                <!-- event 1st of timeline -->
+                
                 <div class="text-wrapper left">
-                    <!-- all text content of timeline -->
+                    
                     <div class="content">
                         <h3> 2005 - 2009 гг.</h3>
                         <p>
@@ -183,9 +187,9 @@
                         </p>
                     </div>
                 </div>
-                <!-- event 1st of timeline -->
+                
                 <div class="text-wrapper right">
-                    <!-- all text content of timeline -->
+                    
                     <div class="content">
                         <h3>2009 – 2013 гг.</h3>
                         <p>Средства, вырученные от продажи акций, пошли на выкуп оставшихся активов «Юкоса», и оплату долгов;
@@ -198,7 +202,7 @@
                     </div>
                 </div>
                 <div class="text-wrapper left">
-                    <!-- all text content of timeline -->
+                    
                     <div class="content">
                         <h3> 2014 - 2018 гг.</h3>
                         <p>
